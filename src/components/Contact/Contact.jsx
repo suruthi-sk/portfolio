@@ -1,29 +1,34 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import styles from './Contact.module.css';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import styles from "./Contact.module.css";
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState('idle'); // idle | sending | sent
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("idle");
 
   const handleChange = (e) =>
-    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) return;
-    setStatus('sending');
-    const subject = `Portfolio Contact from ${form.name}`;
-    const body = `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`;
-    window.location.href = `mailto:suruthisk7@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setStatus("sending");
+    const subject = "Portfolio Contact from " + form.name;
+    const body =
+      "Name: " + form.name + "\nEmail: " + form.email + "\n\nMessage:\n" + form.message;
+    window.location.href =
+      "mailto:suruthisk7@gmail.com?subject=" +
+      encodeURIComponent(subject) +
+      "&body=" +
+      encodeURIComponent(body);
     setTimeout(() => {
-      setStatus('sent');
-      setForm({ name: '', email: '', message: '' });
+      setStatus("sent");
+      setForm({ name: "", email: "", message: "" });
     }, 800);
   };
 
   return (
-    <section id="contact" className={`section ${styles.contact}`}>
+    <section id="contact" className={"section " + styles.contact}>
       <div className="container">
         <motion.p
           className="section-label"
@@ -40,7 +45,7 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Let's work together
+          Let&apos;s work together
         </motion.h2>
 
         <div className={styles.grid}>
@@ -52,7 +57,7 @@ export default function Contact() {
             transition={{ duration: 0.5 }}
           >
             <p className={styles.tagline}>
-              I'm currently open to full-time roles and freelance projects.
+              I&apos;m currently open to full-time roles and freelance projects.
               Have something in mind? Drop me a message.
             </p>
             <div className={styles.contactItems}>
@@ -65,7 +70,12 @@ export default function Contact() {
                 </span>
                 suruthisk7@gmail.com
               </a>
-              <a href="https://linkedin.com/in/suruthi-s-k" target="_blank" rel="noreferrer" className={styles.contactItem}>
+              <a
+                href="https://linkedin.com/in/suruthi-s-k"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.contactItem}
+              >
                 <span className={styles.contactIcon}>in</span>
                 linkedin.com/in/suruthi-s-k
               </a>
@@ -81,7 +91,7 @@ export default function Contact() {
             onSubmit={handleSubmit}
           >
             <AnimatePresence mode="wait">
-              {status === 'sent' ? (
+              {status === "sent" ? (
                 <motion.div
                   key="success"
                   className={styles.successMsg}
@@ -97,7 +107,7 @@ export default function Contact() {
                   <button
                     type="button"
                     className={styles.resetBtn}
-                    onClick={() => setStatus('idle')}
+                    onClick={() => setStatus("idle")}
                   >
                     Send another
                   </button>
@@ -138,16 +148,16 @@ export default function Contact() {
                       value={form.message}
                       onChange={handleChange}
                       rows={5}
-                      placeholder="What's on your mind?"
+                      placeholder="What is on your mind?"
                       required
                     />
                   </div>
                   <button
                     type="submit"
                     className={styles.submitBtn}
-                    disabled={status === 'sending'}
+                    disabled={status === "sending"}
                   >
-                    {status === 'sending' ? 'Opening...' : 'Send Message'}
+                    {status === "sending" ? "Opening..." : "Send Message"}
                   </button>
                 </motion.div>
               )}
@@ -157,7 +167,7 @@ export default function Contact() {
 
         <div className={styles.footer}>
           <p className={styles.footerText}>
-            Designed & built by <span>Suruthi S K</span> · {new Date().getFullYear()}
+            Designed and built by <span>Suruthi S K</span>
           </p>
         </div>
       </div>
