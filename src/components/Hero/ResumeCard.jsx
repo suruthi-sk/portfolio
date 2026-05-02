@@ -40,8 +40,8 @@ export default function ResumeCard() {
 
       <div className={styles.cardFooter}>
         <a
-          href="/Suruthi_resume.pdf"
-          download
+          href="/resume.pdf"
+          download="Suruthi_resume.pdf"
           className={styles.downloadBtn}
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
