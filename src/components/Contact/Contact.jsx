@@ -1,7 +1,27 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Contact.module.css';
 
 export default function Contact() {
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState('idle'); // idle | sending | sent
+
+  const handleChange = (e) =>
+    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!form.name || !form.email || !form.message) return;
+    setStatus('sending');
+    const subject = `Portfolio Contact from ${form.name}`;
+    const body = `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`;
+    window.location.href = `mailto:suruthisk7@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setTimeout(() => {
+      setStatus('sent');
+      setForm({ name: '', email: '', message: '' });
+    }, 800);
+  };
+
   return (
     <section id="contact" className={`section ${styles.contact}`}>
       <div className="container">
@@ -45,7 +65,7 @@ export default function Contact() {
                 </span>
                 suruthisk7@gmail.com
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className={styles.contactItem}>
+              <a href="https://linkedin.com/in/suruthi-s-k" target="_blank" rel="noreferrer" className={styles.contactItem}>
                 <span className={styles.contactIcon}>in</span>
                 linkedin.com/in/suruthi-s-k
               </a>
@@ -58,29 +78,86 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            onSubmit={e => e.preventDefault()}
+            onSubmit={handleSubmit}
           >
-            <div className={styles.row}>
-              <div className={styles.field}>
-                <label className={styles.label}>Name</label>
-                <input className={styles.input} type="text" placeholder="Your name" />
-              </div>
-              <div className={styles.field}>
-                <label className={styles.label}>Email</label>
-                <input className={styles.input} type="email" placeholder="your@email.com" />
-              </div>
-            </div>
-            <div className={styles.field}>
-              <label className={styles.label}>Message</label>
-              <textarea className={styles.textarea} rows={5} placeholder="What's on your mind?" />
-            </div>
-            <button type="submit" className={styles.submitBtn}>Send Message</button>
+            <AnimatePresence mode="wait">
+              {status === 'sent' ? (
+                <motion.div
+                  key="success"
+                  className={styles.successMsg}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                  Your email client should have opened. If not, email me directly at suruthisk7@gmail.com
+                  <button
+                    type="button"
+                    className={styles.resetBtn}
+                    onClick={() => setStatus('idle')}
+                  >
+                    Send another
+                  </button>
+                </motion.div>
+              ) : (
+                <motion.div key="form" className={styles.formFields}>
+                  <div className={styles.row}>
+                    <div className={styles.field}>
+                      <label className={styles.label}>Name</label>
+                      <input
+                        className={styles.input}
+                        type="text"
+                        name="name"
+                        value={form.name}
+                        onChange={handleChange}
+                        placeholder="Your name"
+                        required
+                      />
+                    </div>
+                    <div className={styles.field}>
+                      <label className={styles.label}>Email</label>
+                      <input
+                        className={styles.input}
+                        type="email"
+                        name="email"
+                        value={form.email}
+                        onChange={handleChange}
+                        placeholder="your@email.com"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className={styles.field}>
+                    <label className={styles.label}>Message</label>
+                    <textarea
+                      className={styles.textarea}
+                      name="message"
+                      value={form.message}
+                      onChange={handleChange}
+                      rows={5}
+                      placeholder="What's on your mind?"
+                      required
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className={styles.submitBtn}
+                    disabled={status === 'sending'}
+                  >
+                    {status === 'sending' ? 'Opening...' : 'Send Message'}
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.form>
         </div>
 
         <div className={styles.footer}>
           <p className={styles.footerText}>
-            Designed & built by <span>Suruthi S K</span> Â· {new Date().getFullYear()}
+            Designed & built by <span>Suruthi S K</span> · {new Date().getFullYear()}
           </p>
         </div>
       </div>

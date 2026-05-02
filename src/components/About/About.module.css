@@ -36,7 +36,7 @@
   height: 160px;
   border-radius: 50%;
   background: var(--bg-elevated);
-  border: 2px solid var(--border);
+  border: 2px solid var(--accent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,6 +45,14 @@
   color: var(--accent);
   position: relative;
   z-index: 1;
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 10%, transparent),
+              0 0 32px color-mix(in srgb, var(--accent) 18%, transparent);
+  animation: avatarPulse 4s ease-in-out infinite;
+}
+
+@keyframes avatarPulse {
+  0%, 100% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 10%, transparent), 0 0 32px color-mix(in srgb, var(--accent) 18%, transparent); }
+  50%       { box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 5%, transparent), 0 0 48px color-mix(in srgb, var(--accent) 28%, transparent); }
 }
 
 .avatarGlow {
@@ -69,7 +77,17 @@
   padding: 16px 20px;
   background: var(--bg-surface);
   border: 1px solid var(--border);
+  border-left: 2px solid var(--accent);
   border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.highlightCard:hover {
+  box-shadow: 0 0 20px color-mix(in srgb, var(--accent) 14%, transparent), var(--shadow-card);
+  border-color: var(--accent);
+  border-left-color: var(--accent);
+  transform: translateY(-1px);
 }
 
 .highlightValue {

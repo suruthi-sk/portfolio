@@ -18,8 +18,8 @@ export default function Navbar() {
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
         <a href="#hero" className={styles.logo}>
-          <span className={styles.logoAccent}>&lt;</span>Suruthi S K
-          <span className={styles.logoAccent}>/&gt;</span>
+          <span className={styles.logoMark}>SK</span>
+          <span className={styles.logoName}>Suruthi S K</span>
         </a>
 
         <ul className={styles.links}>

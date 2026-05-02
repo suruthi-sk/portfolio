@@ -30,11 +30,15 @@
   gap: 12px;
   font-size: 14px;
   color: var(--text-muted);
-  transition: color var(--transition);
+  transition: color var(--transition), background var(--transition);
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  margin: -10px -12px;
 }
 
 .contactItem:hover {
   color: var(--accent);
+  background: var(--accent-dim);
 }
 
 .contactIcon {
@@ -49,12 +53,13 @@
   font-weight: 700;
   color: var(--text-muted);
   flex-shrink: 0;
-  transition: border-color var(--transition), color var(--transition);
+  transition: border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
 
 .contactItem:hover .contactIcon {
   border-color: var(--accent);
   color: var(--accent);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--accent) 25%, transparent);
 }
 
 /* Form */
@@ -62,6 +67,11 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
 }
 
 .row {
@@ -94,13 +104,14 @@
   font-family: var(--font-body);
   color: var(--text-primary);
   outline: none;
-  transition: border-color var(--transition);
+  transition: border-color var(--transition), box-shadow var(--transition);
   resize: vertical;
 }
 
 .input:focus,
 .textarea:focus {
   border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
 .input::placeholder,
@@ -117,12 +128,59 @@
   font-weight: 600;
   border-radius: var(--radius-sm);
   letter-spacing: 0.03em;
-  transition: opacity var(--transition), transform var(--transition);
+  transition: opacity var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 
 .submitBtn:hover {
-  opacity: 0.85;
+  opacity: 0.9;
   transform: translateY(-1px);
+  box-shadow: 0 0 22px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Form fields wrapper ── */
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Success state ── */
+.successMsg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 200px;
+  text-align: center;
+  color: var(--accent);
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 12px;
+}
+
+.resetBtn {
+  margin-top: 6px;
+  padding: 8px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+  transition: background var(--transition), box-shadow var(--transition);
+  cursor: pointer;
+}
+
+.resetBtn:hover {
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--accent) 25%, transparent);
 }
 
 /* Footer */
