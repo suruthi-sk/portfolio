@@ -167,7 +167,10 @@ export default function Contact() {
 
         <div className={styles.footer}>
           <p className={styles.footerText}>
-            Designed and built by <span>Suruthi S K</span>
+            Designed & built by <span>Suruthi S K</span>
+          </p>
+          <p className={styles.copyright}>
+            &copy; {new Date().getFullYear()} Suruthi S K. All rights reserved.
           </p>
         </div>
       </div>

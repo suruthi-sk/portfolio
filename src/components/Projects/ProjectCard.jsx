@@ -37,6 +37,20 @@ export default function ProjectCard({ project, isOpen, onToggle }) {
             transition={{ duration: 0.35, ease: 'easeInOut' }}
           >
             <div className={styles.expandInner}>
+              {project.preview && (
+                <div className={styles.previewWrapper}>
+                  <img
+                    src={project.preview}
+                    alt={`${project.title} preview`}
+                    className={styles.previewImg}
+                    loading="lazy"
+                  />
+                  <div className={styles.previewOverlay}>
+                    <span>Preview</span>
+                  </div>
+                </div>
+              )}
+
               <p className={styles.fullDesc}>{project.fullDesc}</p>
 
               <div className={styles.expandMeta}>

@@ -1,6 +1,17 @@
 .section {
   padding: calc(var(--base) * 6) 0;
-  border-top: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(80%, 600px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), color-mix(in srgb, var(--accent) 30%, var(--border)), var(--border), transparent);
 }
 
 .trigger {

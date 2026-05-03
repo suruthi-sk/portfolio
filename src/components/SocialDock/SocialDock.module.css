@@ -29,6 +29,7 @@
   width: 130px;
   color: var(--accent);
   background: var(--accent-dim);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 15%, transparent);
 }
 
 .icon {
@@ -56,7 +57,7 @@
 .line {
   width: 1px;
   height: 60px;
-  background: linear-gradient(to bottom, var(--border), transparent);
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--accent) 30%, var(--border)), transparent);
   margin: 4px 0 0 19px;
 }
 

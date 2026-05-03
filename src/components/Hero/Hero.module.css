@@ -12,7 +12,9 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 55% 60% at 20% 50%, var(--accent-dim) 0%, transparent 75%);
+  background: 
+    radial-gradient(ellipse 55% 60% at 20% 50%, var(--accent-dim) 0%, transparent 75%),
+    radial-gradient(ellipse 30% 40% at 80% 30%, color-mix(in srgb, var(--accent-secondary) 6%, transparent) 0%, transparent 60%);
   pointer-events: none;
   z-index: 0;
 }
@@ -49,7 +51,10 @@
   color: var(--text-primary);
   margin-bottom: 8px;
   line-height: 1.05;
-  text-shadow: 0 0 40px color-mix(in srgb, var(--accent) 18%, transparent);
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .role {
@@ -58,6 +63,22 @@
   color: var(--accent);
   margin-bottom: 24px;
   letter-spacing: 0.02em;
+  min-height: 1.6em;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+}
+
+.cursor {
+  color: var(--accent);
+  animation: blink 0.8s step-end infinite;
+  margin-left: 2px;
+  font-weight: 300;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .bio {
@@ -78,19 +99,20 @@
   display: inline-flex;
   align-items: center;
   padding: 12px 28px;
-  background: var(--accent);
+  background: var(--accent-gradient);
   color: #fff;
   border-radius: var(--radius-sm);
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.03em;
-  transition: opacity var(--transition), transform var(--transition);
+  transition: opacity var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
 .btnPrimary:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-  box-shadow: 0 0 20px color-mix(in srgb, var(--accent) 40%, transparent);
+  opacity: 0.92;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
 .btnOutline {
@@ -103,13 +125,16 @@
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.03em;
-  transition: color var(--transition), border-color var(--transition), transform var(--transition);
+  transition: color var(--transition), border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+  background: color-mix(in srgb, var(--bg-surface) 50%, transparent);
+  backdrop-filter: blur(4px);
 }
 
 .btnOutline:hover {
-  color: var(--text-primary);
+  color: var(--accent);
   border-color: var(--accent);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--accent) 15%, transparent);
 }
 
 /* Resume Card */
@@ -122,8 +147,14 @@
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow), 0 0 40px color-mix(in srgb, var(--accent) 10%, transparent);
+  box-shadow: var(--shadow), var(--glow);
   overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.resumeCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow), 0 0 80px color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
 .cardHeader {
@@ -287,6 +318,38 @@
   50% { opacity: 1; }
 }
 
+/* Visitor Badge */
+.visitorBadge {
+  position: absolute;
+  top: 100px;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 11px;
+  color: var(--text-muted);
+  box-shadow: var(--shadow-card);
+  z-index: 2;
+}
+
+.visitorDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #28c840;
+  box-shadow: 0 0 6px rgba(40, 200, 64, 0.5);
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
 @media (max-width: 768px) {
   .inner {
     grid-template-columns: 1fr;
@@ -299,4 +362,10 @@
   .actions { justify-content: center; }
   .resumeCard { width: 260px; }
   .scrollHint { display: none; }
+  .visitorBadge {
+    top: auto;
+    bottom: 70px;
+    right: 16px;
+    font-size: 10px;
+  }
 }

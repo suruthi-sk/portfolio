@@ -1,5 +1,17 @@
 .about {
-  border-top: 1px solid var(--border-subtle);
+  border-top: none;
+  position: relative;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(80%, 600px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), color-mix(in srgb, var(--accent) 30%, var(--border)), var(--border), transparent);
 }
 
 .grid {
@@ -36,7 +48,10 @@
   height: 160px;
   border-radius: 50%;
   background: var(--bg-elevated);
-  border: 2px solid var(--accent);
+  border: 2px solid transparent;
+  background-image: linear-gradient(var(--bg-elevated), var(--bg-elevated)), var(--accent-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,17 +92,27 @@
   padding: 16px 20px;
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-left: 2px solid var(--accent);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
   transition: box-shadow var(--transition), border-color var(--transition), transform var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.highlightCard::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent-gradient);
+  border-radius: 2px 0 0 2px;
 }
 
 .highlightCard:hover {
-  box-shadow: 0 0 20px color-mix(in srgb, var(--accent) 14%, transparent), var(--shadow-card);
-  border-color: var(--accent);
-  border-left-color: var(--accent);
-  transform: translateY(-1px);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--accent) 14%, transparent), var(--shadow-card);
+  transform: translateY(-2px);
 }
 
 .highlightValue {
@@ -102,6 +127,41 @@
   color: var(--text-muted);
   letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+/* Currently Learning Pill */
+.learningPill {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 12px 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  box-shadow: var(--shadow-card);
+}
+
+.learningIcon {
+  font-size: 16px;
+}
+
+.learningText {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.learningTag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  background: var(--accent-dim);
+  color: var(--accent);
+  border-radius: 12px;
+  letter-spacing: 0.02em;
 }
 
 @media (max-width: 900px) {

@@ -10,6 +10,7 @@ export const projects = [
     duration: 'Dec 2025',
     liveLink: '#',
     githubLink: '#',
+    preview: '/projects/log-analysis-preview.svg', // Replace with actual screenshot/GIF
   },
   {
     id: 2,
@@ -22,5 +23,6 @@ export const projects = [
     duration: 'Oct 2025',
     liveLink: '#',
     githubLink: '#',
+    preview: '/projects/url-monitor-preview.svg', // Replace with actual screenshot/GIF
   },
 ];

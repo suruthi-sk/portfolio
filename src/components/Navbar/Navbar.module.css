@@ -39,7 +39,7 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--accent-gradient);
   color: #fff;
   font-size: 11px;
   font-weight: 700;
@@ -53,8 +53,8 @@
 }
 
 .logo:hover .logoMark {
-  box-shadow: 0 0 24px color-mix(in srgb, var(--accent) 60%, transparent);
-  transform: scale(1.06);
+  box-shadow: 0 0 28px color-mix(in srgb, var(--accent) 60%, transparent);
+  transform: scale(1.08);
 }
 
 .logoName {
@@ -108,13 +108,14 @@
   justify-content: center;
   color: var(--text-muted);
   background: var(--bg-surface);
-  transition: color var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition);
+  transition: color var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition), transform var(--transition);
 }
 
 .themeToggle:hover {
   color: var(--accent);
   border-color: var(--accent);
-  box-shadow: 0 0 10px color-mix(in srgb, var(--accent) 25%, transparent);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 30%, transparent);
+  transform: rotate(15deg);
 }
 
 @media (max-width: 640px) {

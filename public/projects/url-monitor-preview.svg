@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#1a1a24"/>
+  <rect x="40" y="40" width="720" height="320" rx="12" fill="#12121a" stroke="#1f1f2e" stroke-width="2"/>
+  <text x="400" y="180" font-family="sans-serif" font-size="24" fill="#6b9bff" text-anchor="middle">URL Monitoring System</text>
+  <text x="400" y="220" font-family="sans-serif" font-size="14" fill="#8a8a9a" text-anchor="middle">Replace with actual project screenshot or GIF</text>
+  <rect x="300" y="260" width="200" height="40" rx="6" fill="#6b9bff" opacity="0.15"/>
+  <text x="400" y="285" font-family="sans-serif" font-size="12" fill="#6b9bff" text-anchor="middle">placeholder.png</text>
+</svg>

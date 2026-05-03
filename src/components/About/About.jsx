@@ -7,6 +7,8 @@ const highlights = [
   { label: 'Incubation', value: '1 Program' },
 ];
 
+const currentlyLearning = ['Docker', 'Kubernetes', 'System Design'];
+
 export default function About() {
   return (
     <section id="about" className={`section ${styles.about}`}>
@@ -45,6 +47,20 @@ export default function About() {
               I'm currently open to full-time roles and freelance collaborations. If you
               think we'd work well together, let's talk.
             </p>
+
+            <motion.div
+              className={styles.learningPill}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <span className={styles.learningIcon}>🔥</span>
+              <span className={styles.learningText}>Currently exploring:</span>
+              {currentlyLearning.map(item => (
+                <span key={item} className={styles.learningTag}>{item}</span>
+              ))}
+            </motion.div>
           </motion.div>
 
           <motion.div

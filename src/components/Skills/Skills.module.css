@@ -1,5 +1,16 @@
 .skills {
-  border-top: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.skills::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(80%, 600px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), color-mix(in srgb, var(--accent) 30%, var(--border)), var(--border), transparent);
 }
 
 /* ── Two-column layout ── */
@@ -43,7 +54,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--accent-gradient);
   display: flex;
   align-items: center;
   justify-content: center;
