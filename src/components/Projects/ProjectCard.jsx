@@ -71,7 +71,7 @@ export default function ProjectCard({ project, isOpen, onToggle }) {
               </div>
 
               <div className={styles.cardLinks}>
-                <a
+                {/* <a
                   href={project.liveLink}
                   className={`${styles.linkBtn} ${styles.linkBtnPrimary}`}
                   target="_blank"
@@ -84,7 +84,7 @@ export default function ProjectCard({ project, isOpen, onToggle }) {
                   </svg>
                   View Live
                   <span className={styles.placeholder}>(placeholder)</span>
-                </a>
+                </a> */}
                 <a
                   href={project.githubLink}
                   className={styles.linkBtn}

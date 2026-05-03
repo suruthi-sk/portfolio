@@ -44,22 +44,23 @@ function useVisitorCount() {
   const [count, setCount] = useState(null);
 
   useEffect(() => {
-    // Uses a free hit counter API - replace with your preferred service
-    const KEY = 'suruthi-portfolio-visitors';
-    try {
-      const stored = parseInt(localStorage.getItem(KEY) || '0', 10);
-      const sessionKey = 'suruthi-portfolio-session';
-      if (!sessionStorage.getItem(sessionKey)) {
-        sessionStorage.setItem(sessionKey, '1');
-        const newCount = stored + 1;
-        localStorage.setItem(KEY, newCount.toString());
-        setCount(newCount);
-      } else {
-        setCount(stored);
-      }
-    } catch {
-      setCount(42); // fallback
+    const NAMESPACE = 'suruthi-sk-portfolio';
+    const KEY = 'visits';
+    const sessionKey = 'suruthi-portfolio-session';
+    const alreadyCounted = sessionStorage.getItem(sessionKey);
+
+    if (!alreadyCounted) {
+      sessionStorage.setItem(sessionKey, '1');
     }
+
+    const endpoint = alreadyCounted
+      ? `https://api.countapi.xyz/get/${NAMESPACE}/${KEY}`
+      : `https://api.countapi.xyz/hit/${NAMESPACE}/${KEY}`;
+
+    fetch(endpoint)
+      .then(r => r.json())
+      .then(data => { if (data.value) setCount(data.value); })
+      .catch(() => { /* silently hide badge if API unavailable */ });
   }, []);
 
   return count;

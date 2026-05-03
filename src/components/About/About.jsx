@@ -7,7 +7,7 @@ const highlights = [
   { label: 'Incubation', value: '1 Program' },
 ];
 
-const currentlyLearning = ['Docker', 'Kubernetes', 'System Design'];
+const currentlyLearning = ['Docker', 'Exploring new AI stuffs', 'System Design', 'AWS'];
 
 export default function About() {
   return (

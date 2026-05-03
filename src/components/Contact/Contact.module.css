@@ -217,9 +217,16 @@
   color: var(--text-subtle);
 }
 
-.footerText span {
-  color: var(--text-muted);
+.footerLink {
+  color: var(--accent);
   font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.footerLink:hover {
+  opacity: 0.75;
+  text-decoration: underline;
 }
 
 .copyright {
