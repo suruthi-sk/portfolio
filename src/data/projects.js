@@ -9,8 +9,8 @@ export const projects = [
     role: 'Backend Developer',
     duration: 'Dec 2025',
     liveLink: '#',
-    githubLink: '#',
-    preview: '/projects/log-analysis-preview.svg', // Replace with actual screenshot/GIF
+    githubLink: 'https://github.com/suruthi-sk/AI_Log_Analysis',
+    images: ['/projects/log-analysis-1.png', '/projects/log-analysis-2.png'],
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ export const projects = [
     role: 'Backend Developer',
     duration: 'Oct 2025',
     liveLink: '#',
-    githubLink: '#',
-    preview: '/projects/url-monitor-preview.svg', // Replace with actual screenshot/GIF
+    githubLink: 'https://github.com/suruthi-sk/url_monitoring_system',
+    images: ['/projects/url-monitor-1.png', '/projects/url-monitor-2.png'],
   },
 ];

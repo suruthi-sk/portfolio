@@ -1,7 +1,33 @@
 import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 import styles from './Projects.module.css';
 
 export default function ProjectCard({ project, isOpen, onToggle }) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxImg, setLightboxImg] = useState('');
+  const intervalRef = useRef(null);
+  const images = project.images || [];
+
+  useEffect(() => {
+    if (isOpen && images.length > 1) {
+      intervalRef.current = setInterval(() => {
+        setCurrentSlide(prev => (prev + 1) % images.length);
+      }, 3000);
+    }
+    return () => clearInterval(intervalRef.current);
+  }, [isOpen, images.length]);
+
+  const openLightbox = (src) => {
+    setLightboxImg(src);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    setLightboxImg('');
+  };
+
   return (
     <motion.div
       className={`${styles.card} ${isOpen ? styles.cardOpen : ''}`}
@@ -37,17 +63,32 @@ export default function ProjectCard({ project, isOpen, onToggle }) {
             transition={{ duration: 0.35, ease: 'easeInOut' }}
           >
             <div className={styles.expandInner}>
-              {project.preview && (
-                <div className={styles.previewWrapper}>
-                  <img
-                    src={project.preview}
-                    alt={`${project.title} preview`}
-                    className={styles.previewImg}
-                    loading="lazy"
-                  />
-                  <div className={styles.previewOverlay}>
-                    <span>Preview</span>
+              {images.length > 0 && (
+                <div className={styles.carouselWrapper}>
+                  <div className={styles.carouselTrack} style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+                    {images.map((img, idx) => (
+                      <img
+                        key={idx}
+                        src={img}
+                        alt={`${project.title} screenshot ${idx + 1}`}
+                        className={styles.carouselImg}
+                        onClick={() => openLightbox(img)}
+                        loading="lazy"
+                      />
+                    ))}
                   </div>
+                  {images.length > 1 && (
+                    <div className={styles.carouselDots}>
+                      {images.map((_, idx) => (
+                        <button
+                          key={idx}
+                          className={`${styles.dot} ${idx === currentSlide ? styles.dotActive : ''}`}
+                          onClick={() => setCurrentSlide(idx)}
+                          aria-label={`Go to slide ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -101,6 +142,12 @@ export default function ProjectCard({ project, isOpen, onToggle }) {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {lightboxOpen && (
+        <div className={styles.lightbox} onClick={closeLightbox}>
+          <img src={lightboxImg} alt="Full view" className={styles.lightboxImg} />
+        </div>
+      )}
     </motion.div>
   );
 }
