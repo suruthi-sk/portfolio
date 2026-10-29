@@ -1,13 +1,20 @@
 import { motion } from 'framer-motion';
+import { profile } from '../../data/profile';
 import styles from './About.module.css';
 
 const highlights = [
-  { label: 'Internships', value: '2+' },
-  { label: 'Projects Built', value: '2' },
-  { label: 'Incubation', value: '1 Program' },
+  { label: 'Current Role', value: 'JOOLA' },
+  { label: 'Primary Platform', value: 'Salesforce' },
+  { label: 'Automation & APIs', value: 'Playwright · Postman' },
+  { label: 'Education', value: 'B.Tech IT (8.82)' },
 ];
 
-const currentlyLearning = ['Docker', 'Exploring new AI stuffs', 'System Design', 'AWS'];
+const continuousFocus = [
+  'Salesforce Workflows',
+  'Playwright Test Automation',
+  'Celigo & NetSuite Integrations',
+  'API Architecture',
+];
 
 export default function About() {
   return (
@@ -30,22 +37,23 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="section-title" style={{ marginBottom: 24 }}>
-              Developer by choice,<br />problem-solver by nature.
+            <h2 className="section-title">
+              Engineering precision meets<br />enterprise quality assurance.
             </h2>
             <p className={styles.para}>
-              I'm a fresher full-stack developer who's been anything but idle. Through
-              internships and an incubation program, I've had the opportunity to work on
-              real products, collaborate with teams, and ship code that actually gets used.
+              I work as a QA Engineer at <strong>{profile.company}</strong> in Bangalore, focusing on
+              Salesforce-centered business systems and connected integration workflows across NetSuite
+              and Celigo (with additional exposure to Shopify).
             </p>
             <p className={styles.para}>
-              My approach to development is simple: understand the problem deeply, build
-              cleanly, and always keep the end user in mind. I'm comfortable across the
-              stack but have a particular love for building interfaces that feel intuitive.
+              Having a strong background in software engineering, Core Java, Spring Boot, and database systems
+              fundamentally shapes how I approach quality. Instead of treating software as a black box,
+              I inspect API payloads in Postman, design automated Playwright regression tests, trace error
+              logs, and partner with developers to pinpoint defect root causes quickly.
             </p>
             <p className={styles.para}>
-              I'm currently open to full-time roles and freelance collaborations. If you
-              think we'd work well together, let's talk.
+              Whether I am validating mission-critical sync flows between enterprise ERPs or writing clean
+              backend code, my objective is simple: ensure systems are reliable, scalable, and resilient.
             </p>
 
             <motion.div
@@ -55,9 +63,9 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <span className={styles.learningIcon}>🔥</span>
-              <span className={styles.learningText}>Currently exploring:</span>
-              {currentlyLearning.map(item => (
+              <span className={styles.learningIcon}>✦</span>
+              <span className={styles.learningText}>Current Focus:</span>
+              {continuousFocus.map(item => (
                 <span key={item} className={styles.learningTag}>{item}</span>
               ))}
             </motion.div>
@@ -71,7 +79,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.15 }}
           >
             <div className={styles.avatarBox}>
-              <div className={styles.avatar}>S K</div>
+              <div className={styles.avatar}>{profile.initials}</div>
               <div className={styles.avatarGlow} />
             </div>
 

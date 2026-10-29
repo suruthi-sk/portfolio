@@ -13,21 +13,21 @@
   background: linear-gradient(90deg, transparent, var(--border), color-mix(in srgb, var(--accent) 30%, var(--border)), var(--border), transparent);
 }
 
-/* ── Card list ─────────────────────────────────────── */
+/* ── Card list ── */
 .list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
 
 .card {
   display: flex;
   align-items: flex-start;
-  gap: 20px;
+  gap: 16px;
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 24px 28px;
+  padding: 18px 22px;
   text-decoration: none;
   color: inherit;
   box-shadow: var(--shadow-card);
@@ -36,7 +36,6 @@
   transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
 }
 
-/* Gradient left bar */
 .card::before {
   content: '';
   position: absolute;
@@ -52,14 +51,15 @@
 
 .card:hover {
   border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
-  box-shadow: var(--shadow-card), 0 0 30px color-mix(in srgb, var(--accent) 8%, transparent);
+  box-shadow: var(--shadow-card), 0 0 24px color-mix(in srgb, var(--accent) 8%, transparent);
+  transform: translateY(-2px);
 }
 
 .card:hover::before {
   opacity: 0.7;
 }
 
-/* ── Left number ─────────────────────────────────── */
+/* ── Left number ── */
 .cardLeft {
   flex-shrink: 0;
   padding-top: 2px;
@@ -73,7 +73,7 @@
   font-family: var(--font-body);
 }
 
-/* ── Body ────────────────────────────────────────── */
+/* ── Body ── */
 .cardBody {
   flex: 1;
   min-width: 0;
@@ -87,8 +87,8 @@
 }
 
 .cardTitle {
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 16.5px;
+  font-weight: 600;
   font-family: var(--font-body);
   color: var(--text-primary);
   line-height: 1.4;
@@ -100,83 +100,72 @@
 }
 
 .externalIcon {
+  color: var(--text-muted);
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  color: var(--text-subtle);
-  opacity: 0;
-  transform: translateX(-4px);
-  transition: opacity var(--transition), transform var(--transition), color var(--transition);
-  padding-top: 3px;
+  margin-top: 2px;
+  transition: color var(--transition), transform var(--transition);
 }
 
 .card:hover .externalIcon {
-  opacity: 1;
-  transform: translateX(0);
   color: var(--accent);
+  transform: translate(2px, -2px);
 }
 
 .cardDesc {
-  margin-top: 8px;
   font-size: 13.5px;
   color: var(--text-muted);
   line-height: 1.6;
+  margin: 6px 0 12px;
 }
 
-/* ── Meta row ────────────────────────────────────── */
 .cardMeta {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   gap: 8px;
-  margin-top: 14px;
+  font-size: 12px;
+  color: var(--text-subtle);
+  flex-wrap: wrap;
 }
 
 .platform {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--accent);
-  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
 .dot {
-  color: var(--text-subtle);
-  font-size: 12px;
+  color: var(--border);
 }
 
 .date {
-  font-size: 12px;
-  color: var(--text-subtle);
+  color: var(--text-muted);
 }
 
 .tags {
   display: flex;
+  gap: 5px;
   flex-wrap: wrap;
-  gap: 6px;
 }
 
 .tag {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
   font-size: 11px;
-  font-weight: 500;
-  padding: 3px 9px;
-  border-radius: 20px;
-  background: var(--accent-dim);
-  color: var(--accent);
-  letter-spacing: 0.02em;
-  border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
+  padding: 2px 7px;
+  border-radius: 4px;
 }
 
-/* ── Empty state ─────────────────────────────────── */
+/* Empty State */
 .empty {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  padding: 60px 32px;
+  gap: 12px;
+  padding: 48px 24px;
   background: var(--bg-surface);
   border: 1px dashed var(--border);
   border-radius: var(--radius-md);
@@ -184,11 +173,11 @@
 }
 
 .emptyIcon {
-  font-size: 36px;
+  font-size: 28px;
 }
 
 .emptyText {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--text-muted);
 }
 
@@ -199,26 +188,15 @@
   font-size: 13px;
   font-weight: 600;
   color: var(--accent);
-  text-decoration: none;
-  padding: 8px 18px;
-  border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border));
-  border-radius: var(--radius-sm);
-  background: var(--accent-dim);
-  transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
 .emptyLink:hover {
-  background: color-mix(in srgb, var(--accent) 15%, transparent);
-  border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
-  box-shadow: 0 0 16px color-mix(in srgb, var(--accent) 12%, transparent);
+  text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .card {
-    padding: 20px 20px;
-  }
-
-  .cardNumber {
-    display: none;
+    padding: 16px;
+    gap: 14px;
   }
 }

@@ -94,6 +94,13 @@ export default function ProjectCard({ project, isOpen, onToggle }) {
 
               <p className={styles.fullDesc}>{project.fullDesc}</p>
 
+              {project.qaRelevance && (
+                <div className={styles.qaBox}>
+                  <span className={styles.qaBoxLabel}>QA & System Relevance:</span>
+                  <p className={styles.qaBoxText}>{project.qaRelevance}</p>
+                </div>
+              )}
+
               <div className={styles.expandMeta}>
                 <div className={styles.metaItem}>
                   <span className={styles.metaLabel}>Role</span>

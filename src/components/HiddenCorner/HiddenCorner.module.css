@@ -1,5 +1,5 @@
 .section {
-  padding: calc(var(--base) * 6) 0;
+  padding: clamp(28px, 4vw, 40px) 0;
   position: relative;
 }
 
@@ -19,7 +19,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 20px 24px;
+  padding: 16px 20px;
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -36,17 +36,17 @@
 .triggerLeft {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .triggerIcon {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--accent);
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
 .triggerTitle {
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 600;
   color: var(--text-primary);
   font-family: var(--font-body);
@@ -67,7 +67,7 @@
 }
 
 .panelInner {
-  padding-top: 16px;
+  padding-top: 14px;
 }
 
 .hobbiesGrid {
@@ -79,15 +79,21 @@
 .hobbyCard {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
-  padding: 16px;
+  gap: 12px;
+  padding: 14px;
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.hobbyCard:hover {
+  border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+  transform: translateY(-1px);
 }
 
 .hobbyEmoji {
-  font-size: 22px;
+  font-size: 20px;
   flex-shrink: 0;
 }
 
@@ -95,11 +101,11 @@
   font-size: 13px;
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .hobbyDesc {
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--text-muted);
   line-height: 1.5;
 }

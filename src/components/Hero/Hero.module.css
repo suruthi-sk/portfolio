@@ -1,9 +1,9 @@
 .hero {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 80px;
+  padding: clamp(64px, 9vh, 96px) 0 clamp(36px, 5vh, 52px);
   position: relative;
   overflow: hidden;
 }
@@ -22,19 +22,14 @@
 .inner {
   position: relative;
   z-index: 1;
-}
-
-.inner {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 64px;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  gap: 40px;
 }
 
 .left {
-  max-width: 560px;
+  max-width: 580px;
 }
 
 .greeting {
@@ -42,15 +37,15 @@
   font-weight: 500;
   color: var(--text-muted);
   letter-spacing: 0.04em;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .name {
-  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-size: clamp(2.8rem, 5.5vw, 4.2rem);
   letter-spacing: -0.02em;
   color: var(--text-primary);
-  margin-bottom: 8px;
-  line-height: 1.05;
+  margin-bottom: 6px;
+  line-height: 1.08;
   background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -61,9 +56,9 @@
   font-size: 16px;
   font-weight: 500;
   color: var(--accent);
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   letter-spacing: 0.02em;
-  min-height: 1.6em;
+  min-height: 1.5em;
   white-space: nowrap;
   overflow: hidden;
   display: block;
@@ -84,57 +79,57 @@
 .bio {
   font-size: 15px;
   color: var(--text-muted);
-  line-height: 1.75;
-  margin-bottom: 40px;
-  max-width: 460px;
+  line-height: 1.7;
+  margin-bottom: 22px;
+  max-width: 500px;
 }
 
 .actions {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 .btnPrimary {
   display: inline-flex;
   align-items: center;
-  padding: 12px 28px;
+  padding: 10px 22px;
   background: var(--accent-gradient);
   color: #fff;
   border-radius: var(--radius-sm);
   font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   transition: opacity var(--transition), transform var(--transition), box-shadow var(--transition);
-  box-shadow: 0 4px 16px color-mix(in srgb, var(--accent) 30%, transparent);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--accent) 28%, transparent);
 }
 
 .btnPrimary:hover {
-  opacity: 0.92;
+  opacity: 0.94;
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px color-mix(in srgb, var(--accent) 40%, transparent);
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--accent) 36%, transparent);
 }
 
 .btnOutline {
   display: inline-flex;
   align-items: center;
-  padding: 12px 28px;
+  gap: 6px;
+  padding: 10px 20px;
   border: 1px solid var(--border);
   color: var(--text-muted);
   border-radius: var(--radius-sm);
   font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   transition: color var(--transition), border-color var(--transition), transform var(--transition), box-shadow var(--transition);
-  background: color-mix(in srgb, var(--bg-surface) 50%, transparent);
-  backdrop-filter: blur(4px);
+  background: var(--bg-surface);
 }
 
 .btnOutline:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+  color: var(--text-primary);
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px color-mix(in srgb, var(--accent) 15%, transparent);
+  box-shadow: var(--shadow-card);
 }
 
 /* Resume Card */
@@ -147,21 +142,22 @@
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow), var(--glow);
+  box-shadow: var(--shadow-card);
   overflow: hidden;
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
 .resumeCard:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow), 0 0 80px color-mix(in srgb, var(--accent) 12%, transparent);
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+  box-shadow: var(--shadow);
 }
 
 .cardHeader {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 16px;
+  padding: 10px 16px;
   background: var(--bg-elevated);
   border-bottom: 1px solid var(--border);
 }
@@ -192,48 +188,48 @@
 }
 
 .cardBody {
-  padding: 24px 20px 16px;
+  padding: 20px 18px 14px;
   text-align: center;
 }
 
 .resumeAvatar {
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: var(--accent-dim);
   border: 2px solid var(--accent);
   color: var(--accent);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 12px;
+  margin: 0 auto 10px;
 }
 
 .resumeName {
   font-family: var(--font-display);
-  font-size: 17px;
+  font-size: 16px;
   color: var(--text-primary);
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .resumeRole {
-  font-size: 11px;
+  font-size: 11.5px;
   color: var(--text-muted);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
 
 .resumeDivider {
   height: 1px;
   background: var(--border);
-  margin: 16px 0;
+  margin: 14px 0;
 }
 
 .resumeRows {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   text-align: left;
 }
 
@@ -244,7 +240,7 @@
 }
 
 .resumeLabel {
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -252,7 +248,7 @@
 }
 
 .resumeValue {
-  font-size: 11px;
+  font-size: 11.5px;
   color: var(--text-muted);
   font-weight: 500;
 }
@@ -262,7 +258,7 @@
 }
 
 .cardFooter {
-  padding: 0 20px 20px;
+  padding: 0 18px 18px;
 }
 
 .downloadBtn {
@@ -271,14 +267,15 @@
   justify-content: center;
   gap: 7px;
   width: 100%;
-  padding: 10px;
+  padding: 9px;
   background: var(--accent-dim);
   color: var(--accent);
   border-radius: var(--radius-sm);
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.03em;
-  transition: background var(--transition), transform var(--transition);
+  letter-spacing: 0.02em;
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  transition: all var(--transition);
 }
 
 .downloadBtn:hover {
@@ -290,25 +287,25 @@
 /* Scroll hint */
 .scrollHint {
   position: absolute;
-  bottom: 32px;
+  bottom: 18px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   color: var(--text-subtle);
 }
 
 .scrollHint span {
-  font-size: 10px;
+  font-size: 9px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
 .scrollLine {
   width: 1px;
-  height: 40px;
+  height: 28px;
   background: linear-gradient(to bottom, var(--text-subtle), transparent);
   animation: scrollPulse 2s ease-in-out infinite;
 }
@@ -318,54 +315,16 @@
   50% { opacity: 1; }
 }
 
-/* Visitor Badge */
-.visitorBadge {
-  position: absolute;
-  top: 100px;
-  right: 32px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  font-size: 11px;
-  color: var(--text-muted);
-  box-shadow: var(--shadow-card);
-  z-index: 2;
-}
-
-.visitorDot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #28c840;
-  box-shadow: 0 0 6px rgba(40, 200, 64, 0.5);
-  animation: dotPulse 2s ease-in-out infinite;
-}
-
-@keyframes dotPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
 @media (max-width: 768px) {
   .inner {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 36px;
     justify-items: center;
     text-align: center;
   }
   .left { max-width: 100%; }
-  .bio { max-width: 100%; }
+  .bio { max-width: 100%; margin-bottom: 24px; }
   .actions { justify-content: center; }
   .resumeCard { width: 260px; }
   .scrollHint { display: none; }
-  .visitorBadge {
-    top: auto;
-    bottom: 70px;
-    right: 16px;
-    font-size: 10px;
-  }
 }

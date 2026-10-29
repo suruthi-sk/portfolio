@@ -1,4 +1,4 @@
-import { knowledgeBase } from '../data/knowledgeBase';
+import { knowledgeBase } from '../data/knowledgeBase.js';
 
 // Simple TF-IDF-like scoring with cosine similarity for RAG retrieval
 function tokenize(text) {

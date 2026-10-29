@@ -1,0 +1,281 @@
+.experience {
+  position: relative;
+}
+
+.introSubtitle {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  padding-left: 24px;
+  border-left: 2px solid var(--border);
+}
+
+@media (max-width: 640px) {
+  .timeline {
+    padding-left: 16px;
+  }
+}
+
+.item {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.item::before {
+  content: '';
+  position: absolute;
+  left: -32px;
+  top: 26px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 2px solid var(--border);
+  transition: all var(--transition);
+}
+
+@media (max-width: 640px) {
+  .item {
+    padding: 16px 16px;
+  }
+  .item::before {
+    left: -23px;
+    width: 12px;
+    height: 12px;
+    top: 22px;
+  }
+}
+
+.item:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+  box-shadow: var(--shadow);
+}
+
+.currentItem {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 4%, var(--bg-surface)) 0%, var(--bg-surface) 100%);
+}
+
+.currentItem::before {
+  background: var(--accent);
+  border-color: #fff;
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.itemHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.badgeRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.currentBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 9px;
+  border-radius: 100px;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.pulsingDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent);
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.periodBadge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.eduBadge {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 9px;
+  border-radius: 100px;
+  background: color-mix(in srgb, #a78bfa 15%, transparent);
+  color: #a78bfa;
+  border: 1px solid color-mix(in srgb, #a78bfa 30%, transparent);
+}
+
+.roleTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.companyMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+
+.companyName {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.metaDot {
+  color: var(--text-subtle);
+}
+
+.location {
+  color: var(--text-muted);
+}
+
+.cgpaBadge {
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.summaryText {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.platformsBox {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+  padding: 10px 14px;
+  background: color-mix(in srgb, var(--bg-elevated) 60%, transparent);
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--border);
+}
+
+.platformsLabel {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-subtle);
+}
+
+.platformPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.platformPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  padding: 3px 9px;
+  border-radius: 5px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.primaryPill {
+  border-color: color-mix(in srgb, #38bdf8 50%, var(--border));
+  background: color-mix(in srgb, #38bdf8 10%, var(--bg-surface));
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.pillTag {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.descList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.descItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.checkIcon {
+  color: var(--accent);
+  margin-top: 3px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toolsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.toolTag {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2.5px 8px;
+  border-radius: 100px;
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.educationCard {
+  border-style: dashed;
+}

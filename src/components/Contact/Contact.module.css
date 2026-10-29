@@ -15,47 +15,49 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 64px;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 32px;
   align-items: start;
 }
 
 .info {}
 
 .tagline {
-  font-size: 15px;
+  font-size: 14.5px;
   color: var(--text-muted);
-  line-height: 1.8;
-  margin-bottom: 32px;
+  line-height: 1.7;
+  margin-bottom: 20px;
 }
 
 .contactItems {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 .contactItem {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--text-muted);
-  transition: color var(--transition), background var(--transition);
-  padding: 10px 12px;
+  transition: color var(--transition), background var(--transition), border-color var(--transition);
+  padding: 8px 12px;
   border-radius: var(--radius-sm);
-  margin: -10px -12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
 }
 
 .contactItem:hover {
   color: var(--accent);
   background: var(--accent-dim);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
 }
 
 .contactIcon {
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-sm);
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-xs);
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
@@ -77,11 +79,11 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 28px;
+  padding: 20px 22px;
   box-shadow: var(--shadow-card);
   transition: box-shadow var(--transition), transform var(--transition);
 }
@@ -93,7 +95,7 @@
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 12px;
 }
 
 .field {
@@ -103,55 +105,54 @@
 }
 
 .label {
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--text-muted);
+  letter-spacing: 0.02em;
 }
 
 .input,
 .textarea {
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
+  width: 100%;
+  padding: 10px 14px;
   border-radius: var(--radius-sm);
-  padding: 12px 14px;
-  font-size: 13px;
-  font-family: var(--font-body);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   color: var(--text-primary);
-  outline: none;
+  font-family: var(--font-body);
+  font-size: 13.5px;
   transition: border-color var(--transition), box-shadow var(--transition);
-  resize: vertical;
 }
 
 .input:focus,
 .textarea:focus {
+  outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 12%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent);
 }
 
-.input::placeholder,
-.textarea::placeholder {
-  color: var(--text-subtle);
+.textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
 .submitBtn {
   align-self: flex-start;
-  padding: 12px 28px;
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
   background: var(--accent-gradient);
   color: #fff;
   font-size: 13px;
   font-weight: 600;
-  border-radius: var(--radius-sm);
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   transition: opacity var(--transition), transform var(--transition), box-shadow var(--transition);
-  box-shadow: 0 4px 16px color-mix(in srgb, var(--accent) 25%, transparent);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--accent) 28%, transparent);
 }
 
 .submitBtn:hover {
-  opacity: 0.92;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px color-mix(in srgb, var(--accent) 40%, transparent);
+  opacity: 0.94;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
 .submitBtn:disabled {
@@ -160,50 +161,34 @@
   transform: none;
 }
 
-/* ── Form fields wrapper ── */
-.formFields {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-/* ── Success state ── */
 .successMsg {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  min-height: 200px;
+  gap: 12px;
+  padding: 32px 20px;
   text-align: center;
-  color: var(--accent);
+  color: var(--text-primary);
   font-size: 14px;
-  line-height: 1.6;
-  padding: 12px;
+}
+
+.successMsg svg {
+  color: #28c840;
 }
 
 .resetBtn {
-  margin-top: 6px;
-  padding: 8px 20px;
   font-size: 12px;
   font-weight: 600;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--accent);
   color: var(--accent);
-  background: var(--accent-dim);
-  transition: background var(--transition), box-shadow var(--transition);
-  cursor: pointer;
-}
-
-.resetBtn:hover {
-  background: color-mix(in srgb, var(--accent) 20%, transparent);
-  box-shadow: 0 0 10px color-mix(in srgb, var(--accent) 25%, transparent);
+  margin-top: 8px;
+  text-decoration: underline;
 }
 
 /* Footer */
 .footer {
-  margin-top: calc(var(--base) * 10);
-  padding-top: calc(var(--base) * 4);
+  margin-top: 48px;
+  padding-top: 20px;
   border-top: 1px solid var(--border-subtle);
   text-align: center;
   display: flex;
@@ -217,18 +202,6 @@
   color: var(--text-subtle);
 }
 
-.footerLink {
-  color: var(--accent);
-  font-weight: 500;
-  text-decoration: none;
-  transition: opacity 0.2s;
-}
-
-.footerLink:hover {
-  opacity: 0.75;
-  text-decoration: underline;
-}
-
 .copyright {
   font-size: 11px;
   color: var(--text-subtle);
@@ -238,9 +211,10 @@
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
   }
   .row {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
