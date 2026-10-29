@@ -29,7 +29,7 @@
   width: 130px;
   color: var(--accent);
   background: var(--accent-dim);
-  box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 15%, transparent);
+  box-shadow: var(--shadow-card);
 }
 
 .icon {

@@ -75,9 +75,7 @@
   justify-content: center;
   pointer-events: none;
   z-index: 5;
-  box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 18%, transparent),
-              0 0 20px color-mix(in srgb, var(--accent) 30%, transparent);
-  animation: hubPulse 3s ease-in-out infinite;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .hub span {
@@ -85,17 +83,6 @@
   font-weight: 700;
   color: #fff;
   letter-spacing: 0.05em;
-}
-
-@keyframes hubPulse {
-  0%, 100% {
-    box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 18%, transparent),
-                0 0 20px color-mix(in srgb, var(--accent) 30%, transparent);
-  }
-  50% {
-    box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 9%, transparent),
-                0 0 32px color-mix(in srgb, var(--accent) 45%, transparent);
-  }
 }
 
 /* ── Category nodes ── */
@@ -119,18 +106,18 @@
   border-radius: 50%;
   background: var(--bg-surface);
   border: 2px solid var(--c);
-  transition: background 0.28s, box-shadow 0.28s, transform 0.28s;
-  box-shadow: 0 0 8px color-mix(in srgb, var(--c) 25%, transparent);
+  transition: background 0.2s, transform 0.2s, border-color 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .catNode:hover .catDot {
-  box-shadow: 0 0 16px color-mix(in srgb, var(--c) 50%, transparent);
-  transform: scale(1.08);
+  transform: scale(1.06);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.14);
 }
 
 .catNodeActive .catDot {
   background: var(--c);
-  box-shadow: 0 0 20px color-mix(in srgb, var(--c) 65%, transparent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .catLabel {
@@ -183,7 +170,6 @@
   border-radius: 50%;
   background: var(--c);
   flex-shrink: 0;
-  box-shadow: 0 0 8px color-mix(in srgb, var(--c) 60%, transparent);
 }
 
 .panelTitle {

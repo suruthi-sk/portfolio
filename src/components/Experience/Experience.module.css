@@ -74,7 +74,7 @@
 .currentItem::before {
   background: var(--accent);
   border-color: #fff;
-  box-shadow: 0 0 10px var(--accent);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .itemHeaderBtn {
@@ -151,7 +151,6 @@
   height: 6px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 6px var(--accent);
   animation: pulseDot 2s infinite ease-in-out;
 }
 
@@ -173,9 +172,9 @@
   letter-spacing: 0.06em;
   padding: 3px 9px;
   border-radius: 100px;
-  background: color-mix(in srgb, #a78bfa 15%, transparent);
-  color: #a78bfa;
-  border: 1px solid color-mix(in srgb, #a78bfa 30%, transparent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
 }
 
 .roleTitle {
@@ -260,9 +259,9 @@
 }
 
 .primaryPill {
-  border-color: color-mix(in srgb, #38bdf8 50%, var(--border));
-  background: color-mix(in srgb, #38bdf8 10%, var(--bg-surface));
-  color: #38bdf8;
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+  background: var(--accent-dim);
+  color: var(--accent);
   font-weight: 600;
 }
 

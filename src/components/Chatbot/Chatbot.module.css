@@ -12,13 +12,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(107, 155, 255, 0.35), 0 0 40px rgba(167, 139, 250, 0.15);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
   z-index: 1000;
   transition: box-shadow var(--transition);
 }
 
 .fab:hover {
-  box-shadow: 0 6px 28px rgba(107, 155, 255, 0.45), 0 0 60px rgba(167, 139, 250, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
 }
 
 .chatWindow {

@@ -93,7 +93,7 @@ export const experience = [
 export const skillCategories = [
   {
     name: 'Quality Assurance',
-    color: '#10b981',
+    color: '#15803d',
     description: 'Testing methodologies, automation, and defect prevention across connected systems',
     skills: [
       'Manual & Functional Testing',
@@ -108,7 +108,7 @@ export const skillCategories = [
   },
   {
     name: 'Enterprise Platforms',
-    color: '#38bdf8',
+    color: '#0284c7',
     description: 'Mission-critical enterprise software and connected business integration flows',
     skills: [
       'Salesforce (Primary Platform)',
@@ -119,7 +119,7 @@ export const skillCategories = [
   },
   {
     name: 'Programming & Languages',
-    color: '#a78bfa',
+    color: '#4f46e5',
     description: 'Object-oriented programming, data structures, and scripting',
     skills: [
       'Core Java',
@@ -133,7 +133,7 @@ export const skillCategories = [
   },
   {
     name: 'Backend & Frameworks',
-    color: '#f97316',
+    color: '#c2410c',
     description: 'Backend services, REST architectures, and data persistence',
     skills: [
       'Spring Boot',
@@ -146,13 +146,13 @@ export const skillCategories = [
   },
   {
     name: 'Databases',
-    color: '#06b6d4',
+    color: '#0f766e',
     description: 'Relational, time-series, and in-memory data storage systems',
     skills: ['MySQL', 'PostgreSQL', 'Cassandra', 'Redis'],
   },
   {
     name: 'Tools & Workflow',
-    color: '#ec4899',
+    color: '#7e22ce',
     description: 'Developer tooling, version control, and IDE environments',
     skills: [
       'Postman',

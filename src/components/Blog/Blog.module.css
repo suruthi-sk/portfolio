@@ -51,7 +51,7 @@
 
 .card:hover {
   border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
-  box-shadow: var(--shadow-card), 0 0 24px color-mix(in srgb, var(--accent) 8%, transparent);
+  box-shadow: var(--shadow);
   transform: translateY(-2px);
 }
 

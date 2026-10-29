@@ -59,22 +59,11 @@
   color: var(--accent);
   position: relative;
   z-index: 1;
-  box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 10%, transparent),
-              0 0 28px color-mix(in srgb, var(--accent) 16%, transparent);
-  animation: avatarPulse 4s ease-in-out infinite;
-}
-
-@keyframes avatarPulse {
-  0%, 100% { box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 10%, transparent), 0 0 28px color-mix(in srgb, var(--accent) 16%, transparent); }
-  50%       { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 5%, transparent), 0 0 40px color-mix(in srgb, var(--accent) 25%, transparent); }
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .avatarGlow {
-  position: absolute;
-  inset: -10px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%);
-  z-index: 0;
+  display: none;
 }
 
 .highlights {
@@ -110,7 +99,7 @@
 }
 
 .highlightCard:hover {
-  box-shadow: 0 0 20px color-mix(in srgb, var(--accent) 14%, transparent), var(--shadow-card);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
   border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
   transform: translateY(-2px);
 }

@@ -44,7 +44,7 @@
 
 .card:hover {
   border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
-  box-shadow: var(--shadow-card), 0 0 24px color-mix(in srgb, var(--accent) 8%, transparent);
+  box-shadow: var(--shadow);
   transform: translateY(-2px);
 }
 
@@ -54,7 +54,7 @@
 
 .cardOpen {
   border-color: var(--accent);
-  box-shadow: 0 0 24px color-mix(in srgb, var(--accent) 12%, transparent);
+  box-shadow: var(--shadow);
 }
 
 .cardOpen::before {
@@ -90,7 +90,6 @@
   opacity: 0.8;
   min-width: 22px;
   padding-top: 2px;
-  text-shadow: 0 0 12px color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
 .cardTitle {
