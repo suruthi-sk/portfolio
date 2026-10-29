@@ -84,19 +84,6 @@ export default function Hero() {
           <motion.div className={styles.actions} {...fadeUp(0.5)}>
             <a href="#experience" className={styles.btnPrimary}>View Experience</a>
             <a href="#projects" className={styles.btnOutline}>Projects</a>
-            <a
-              href="/resume.pdf"
-              download="Suruthi_SK_Resume.pdf"
-              className={styles.btnOutline}
-              title="Download latest verified resume"
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="7 10 12 15 17 10"/>
-                <line x1="12" y1="15" x2="12" y2="3"/>
-              </svg>
-              Resume
-            </a>
             <a href="#contact" className={styles.btnOutline}>Get in Touch</a>
           </motion.div>
         </div>
