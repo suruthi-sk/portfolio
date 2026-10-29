@@ -5,7 +5,7 @@ import styles from './About.module.css';
 const highlights = [
   { label: 'Current Role', value: 'JOOLA' },
   { label: 'Primary Platform', value: 'Salesforce' },
-  { label: 'Automation & APIs', value: 'Playwright · Postman' },
+  { label: 'Automation', value: 'Playwright · Postman' },
   { label: 'Education', value: 'B.Tech IT (8.82)' },
 ];
 

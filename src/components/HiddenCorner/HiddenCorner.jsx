@@ -24,7 +24,7 @@ export default function HiddenCorner() {
             <div>
               <p className={styles.triggerTitle}>There's more to me</p>
               <p className={styles.triggerSub}>
-                Beyond code — interests I don't usually put on a resume
+                Apart from coding, I love to do stuffs
               </p>
             </div>
           </div>

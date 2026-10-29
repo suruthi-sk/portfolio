@@ -51,7 +51,7 @@ export default function Skills() {
         </motion.h2>
 
         <p className={styles.skillsSubtitle}>
-          Interactive competency web — click any node to explore platforms, tools, and technical capabilities.
+          Click any node to explore platforms, tools, and technical capabilities.
         </p>
 
         <div className={styles.layout}>

@@ -5,7 +5,6 @@ export const profile = {
   name: 'Suruthi S K',
   initials: 'SK',
   location: 'Pudukkottai, India',
-  phone: '+91-6369749790',
   email: 'suruthisk7@gmail.com',
   linkedin: 'https://linkedin.com/in/suruthi-s-k',
   github: 'https://github.com/suruthi-sk',
@@ -134,7 +133,7 @@ export const skillCategories = [
   },
   {
     name: 'Backend & Frameworks',
-    color: '#f59e0b',
+    color: '#f97316',
     description: 'Backend services, REST architectures, and data persistence',
     skills: [
       'Spring Boot',
@@ -147,7 +146,7 @@ export const skillCategories = [
   },
   {
     name: 'Databases',
-    color: '#fbbf24',
+    color: '#06b6d4',
     description: 'Relational, time-series, and in-memory data storage systems',
     skills: ['MySQL', 'PostgreSQL', 'Cassandra', 'Redis'],
   },
