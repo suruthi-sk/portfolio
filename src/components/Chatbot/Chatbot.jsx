@@ -17,6 +17,7 @@ const smallTalk = [
   { patterns: ['help', 'what can you do', 'options', 'menu'], replies: ['I can tell you about Suruthi\'s skills, projects, experience, and contact info. Or if I can\'t answer something, I\'ll help you send her an email! Just ask away 🚀'] },
   { patterns: ['who are you', 'what are you', 'your name'], replies: ['I\'m Aira! 🤖 Suruthi\'s portfolio chatbot. I know stuff about her skills, projects, and experience. Try asking me something!'] },
   { patterns: ['lol', 'haha', 'lmao', 'rofl', 'funny'], replies: ['Glad I could make you smile! 😄', 'I try my best to be entertaining AND informative 😏'] },
+  { patterns: ['phone', 'mobile', 'phone number', 'mobile number', 'call', 'whatsapp', 'cell', 'number', 'contact number'], replies: ['For personal privacy, Suruthi does not share her phone or mobile number publicly. You can reach out directly via email at suruthisk7@gmail.com, on LinkedIn, or via the contact form! ✉️'] },
   { patterns: ['ok', 'okay', 'k', 'alright', 'sure'], replies: ['Cool! Let me know if there\'s anything else! 👍', 'Alrighty! I\'m here if you need me 😊'] },
 ];
 

@@ -111,10 +111,16 @@ export const knowledgeBase = [
       "For privacy reasons, Suruthi's downloadable resume is currently kept private on the public site. If you are a recruiter, hiring manager, or potential collaborator who would like a copy, please reach out directly via the contact form or email (suruthisk7@gmail.com) and she will gladly share it with you!",
   },
   {
-    id: 'contact-info',
-    keywords: ['contact', 'email', 'phone', 'reach', 'connect', 'linkedin', 'github', 'touch'],
+    id: 'phone-number',
+    keywords: ['phone', 'mobile', 'call', 'number', 'cell', 'whatsapp', 'telephone', 'contact number'],
     content:
-      "You can connect with Suruthi via:\n• Email: suruthisk7@gmail.com\n• LinkedIn: linkedin.com/in/suruthi-s-k\n• GitHub: github.com/suruthi-sk\n• LeetCode: leetcode.com/Suruthi_S_K\n• Medium: medium.com/@suruthisk03\n• Phone: +91-6369749790\nLocation: Bangalore / Pudukkottai, India.",
+      "For privacy reasons, Suruthi's personal phone and mobile numbers are not shared publicly. You can easily connect with her via email at suruthisk7@gmail.com, on LinkedIn (linkedin.com/in/suruthi-s-k), or through the contact form on this website!",
+  },
+  {
+    id: 'contact-info',
+    keywords: ['contact', 'email', 'reach', 'connect', 'linkedin', 'github', 'touch', 'message'],
+    content:
+      "You can connect with Suruthi via:\n• Email: suruthisk7@gmail.com\n• LinkedIn: linkedin.com/in/suruthi-s-k\n• GitHub: github.com/suruthi-sk\n• LeetCode: leetcode.com/Suruthi_S_K\n• Medium: medium.com/@suruthisk03\n• Portfolio Contact Form: Leave a message on the Contact section\nLocation: Bangalore / Pudukkottai, India.",
   },
   {
     id: 'engineering-philosophy',
