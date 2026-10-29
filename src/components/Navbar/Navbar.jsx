@@ -3,6 +3,9 @@ import { useTheme } from '../../context/ThemeContext';
 import { useScrollPosition } from '../../hooks/useScrollPosition';
 import styles from './Navbar.module.css';
 
+// Set to true to re-enable Resume download buttons across navbar and site
+const SHOW_RESUME_DOWNLOAD = false;
+
 const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
@@ -63,14 +66,16 @@ export default function Navbar() {
         </nav>
 
         <div className={styles.navActions}>
-          <a
-            href="/resume.pdf"
-            download="Suruthi_SK_Resume.pdf"
-            className={styles.resumeBtn}
-            title="Download resume PDF"
-          >
-            Resume
-          </a>
+          {SHOW_RESUME_DOWNLOAD && (
+            <a
+              href="/resume.pdf"
+              download="Suruthi_SK_Resume.pdf"
+              className={styles.resumeBtn}
+              title="Download resume PDF"
+            >
+              Resume
+            </a>
+          )}
 
           <button
             className={styles.themeToggle}
@@ -144,21 +149,23 @@ export default function Navbar() {
               ))}
             </ul>
 
-            <div className={styles.mobileFooter}>
-              <a
-                href="/resume.pdf"
-                download="Suruthi_SK_Resume.pdf"
-                className={styles.mobileResumeBtn}
-                onClick={closeMenu}
-              >
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                  <polyline points="7 10 12 15 17 10" />
-                  <line x1="12" y1="15" x2="12" y2="3" />
-                </svg>
-                Download Resume (PDF)
-              </a>
-            </div>
+            {SHOW_RESUME_DOWNLOAD && (
+              <div className={styles.mobileFooter}>
+                <a
+                  href="/resume.pdf"
+                  download="Suruthi_SK_Resume.pdf"
+                  className={styles.mobileResumeBtn}
+                  onClick={closeMenu}
+                >
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                  Download Resume (PDF)
+                </a>
+              </div>
+            )}
           </div>
         </div>
       )}

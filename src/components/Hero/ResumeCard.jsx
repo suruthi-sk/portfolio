@@ -2,6 +2,9 @@ import { motion } from 'framer-motion';
 import { profile } from '../../data/profile';
 import styles from './Hero.module.css';
 
+// Set to true to re-enable the Resume download button inside this card (hidden for privacy)
+const SHOW_RESUME_DOWNLOAD = false;
+
 export default function ResumeCard() {
   return (
     <motion.div
@@ -13,7 +16,7 @@ export default function ResumeCard() {
         <div className={styles.cardDots}>
           <span /><span /><span />
         </div>
-        <span className={styles.cardTitle}>Suruthi_SK_Resume.pdf</span>
+        <span className={styles.cardTitle}>Suruthi_SK_Profile</span>
       </div>
 
       <div className={styles.cardBody}>
@@ -47,21 +50,23 @@ export default function ResumeCard() {
         </div>
       </div>
 
-      <div className={styles.cardFooter}>
-        <a
-          href="/resume.pdf"
-          download="Suruthi_SK_Resume.pdf"
-          className={styles.downloadBtn}
-          title="Download verified resume PDF"
-        >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="7 10 12 15 17 10"/>
-            <line x1="12" y1="15" x2="12" y2="3"/>
-          </svg>
-          Download Resume (PDF)
-        </a>
-      </div>
+      {SHOW_RESUME_DOWNLOAD && (
+        <div className={styles.cardFooter}>
+          <a
+            href="/resume.pdf"
+            download="Suruthi_SK_Resume.pdf"
+            className={styles.downloadBtn}
+            title="Download verified resume PDF"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download Resume (PDF)
+          </a>
+        </div>
+      )}
     </motion.div>
   );
 }

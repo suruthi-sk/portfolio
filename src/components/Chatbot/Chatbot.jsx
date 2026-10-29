@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { searchKnowledge } from '../../utils/ragSearch';
 import styles from './Chatbot.module.css';
 
-const BOTNAME = 'Micky';
+const BOTNAME = 'Aira';
 
 // Small talk responses
 const smallTalk = [
@@ -15,7 +15,7 @@ const smallTalk = [
   { patterns: ['good night', 'gn', 'night'], replies: ['Good night! 🌙 Sweet dreams!', 'Night night! Come back anytime! 💤'] },
   { patterns: ['cool', 'nice', 'awesome', 'great', 'wow', 'amazing'], replies: ['Right?! 😎 Anything else you\'d like to know?', 'Glad you think so! What else can I help with?'] },
   { patterns: ['help', 'what can you do', 'options', 'menu'], replies: ['I can tell you about Suruthi\'s skills, projects, experience, and contact info. Or if I can\'t answer something, I\'ll help you send her an email! Just ask away 🚀'] },
-  { patterns: ['who are you', 'what are you', 'your name'], replies: ['I\'m Micky! 🤖 Suruthi\'s portfolio chatbot. I know stuff about her skills, projects, and experience. Try asking me something!'] },
+  { patterns: ['who are you', 'what are you', 'your name'], replies: ['I\'m Aira! 🤖 Suruthi\'s portfolio chatbot. I know stuff about her skills, projects, and experience. Try asking me something!'] },
   { patterns: ['lol', 'haha', 'lmao', 'rofl', 'funny'], replies: ['Glad I could make you smile! 😄', 'I try my best to be entertaining AND informative 😏'] },
   { patterns: ['ok', 'okay', 'k', 'alright', 'sure'], replies: ['Cool! Let me know if there\'s anything else! 👍', 'Alrighty! I\'m here if you need me 😊'] },
 ];
@@ -185,7 +185,7 @@ export default function Chatbot() {
         onClick={() => setIsOpen((v) => !v)}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
-        aria-label="Chat with Micky"
+        aria-label="Chat with Aira"
       >
         <AnimatePresence mode="wait">
           {isOpen ? (
@@ -313,7 +313,7 @@ export default function Chatbot() {
 
             {/* Disclaimer */}
             <p className={styles.disclaimer}>
-              ⚡ I'm Micky — sometimes brilliant, sometimes confused. Don't take my word as gospel, double-check the important stuff!
+              ⚡ I'm Aira — sometimes brilliant, sometimes confused. Don't take my word as gospel, double-check the important stuff!
             </p>
           </motion.div>
         )}

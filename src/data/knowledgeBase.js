@@ -1,4 +1,4 @@
-// Portfolio knowledge base - RAG chunks for Micky (the portfolio AI assistant)
+// Portfolio knowledge base - RAG chunks for Aira (the portfolio AI assistant)
 // Updated with verified resume facts, QA role at JOOLA, enterprise platforms, and technical foundation.
 
 export const knowledgeBase = [
@@ -108,7 +108,7 @@ export const knowledgeBase = [
     id: 'resume-download',
     keywords: ['resume', 'cv', 'download resume', 'pdf', 'get resume'],
     content:
-      "You can download Suruthi's latest resume directly from the Hero section, the navigation bar, or by clicking the resume download link on the portfolio. The file is saved as Suruthi_SK_Resume.pdf.",
+      "For privacy reasons, Suruthi's downloadable resume is currently kept private on the public site. If you are a recruiter, hiring manager, or potential collaborator who would like a copy, please reach out directly via the contact form or email (suruthisk7@gmail.com) and she will gladly share it with you!",
   },
   {
     id: 'contact-info',
